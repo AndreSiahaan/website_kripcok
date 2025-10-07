@@ -1,0 +1,492 @@
+/** @format */
+
+/* 🎨 Variabel Warna (Skema Cokelat Tua Profesional) */
+:root {
+  --primary-color: #4e342e; /* Cokelat Tua (Dominan & Profesional) */
+  --secondary-color: #6d4c41; /* Cokelat Sedang/Kopi */
+  --accent-color: #efebe9; /* Krem Abu-abu Sangat Terang (Hover/Highlight) */
+  --light-bg: #ffffff;
+  --soft-bg: #f5f5f5; /* Latar belakang Abu-abu/Krem Lembut */
+  --text-color: #3e2723; /* Cokelat Gelap (Teks Utama) */
+  --highlight-color: #8d6e63; /* Cokelat Medium (Aksen/Link) */
+}
+
+/* 🌐 Reset dan Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+/* 🔝 Header */
+header {
+  background-color: var(--accent-color); /* Krem Netral */
+  color: var(--text-color);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Slogan */
+.slogan {
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: "Poppins", sans-serif;
+}
+
+.slogan h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color); /* Warna cokelat tua utama */
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+  transform: scale(1.02);
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.brand {
+  color: var(--secondary-color);
+}
+
+/* 🔗 Navigasi */
+nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🍔 Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 🍌 Slide Menu Mobile */
+.nav-slide {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  height: 100vh;
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  z-index: 2000;
+}
+
+.nav-slide.active {
+  right: 0;
+}
+
+.nav-slide li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.nav-slide a {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-slide a:hover {
+  background-color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🖼️ Hero Section */
+#hero {
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* 📦 Section Umum */
+#produk,
+#tentang,
+#kontak {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--light-bg);
+  border-bottom: 1px solid #eee;
+}
+
+/* 🧃 Produk */
+.produk-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Kartu Produk */
+.produk-card {
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.produk-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.produk-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Tombol Produk */
+.produk-card button {
+  background-color: var(--primary-color); /* Warna cokelat tua utama */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.produk-card button:hover {
+  background-color: var(--secondary-color); /* Warna cokelat gelap */
+  transform: scale(1.08);
+}
+
+/* 📱 Kontak */
+#kontak {
+  background-color: var(--light-bg); /* Tetap putih */
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+#kontak h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color); /* Warna cokelat sedang */
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+#kontak p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 12px 0;
+}
+
+#kontak a {
+  color: var(--primary-color); /* Link cokelat tua */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#kontak a:hover {
+  background-color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  /* Hover cokelat sedang */
+}
+
+/* 🖼️ Galeri Foto */
+.galeri-foto {
+  padding: 30px 20px;
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+}
+
+.foto-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.foto-galeri {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.foto-galeri:hover {
+  transform: scale(1.03);
+}
+
+/* 📝 Deskripsi Produk */
+.deskripsi-produk {
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.deskripsi-produk h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.deskripsi-produk ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+/* List Deskripsi Produk */
+.deskripsi-produk li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: var(--accent-color); /* Latar belakang krem sangat terang */
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 🧱 Footer */
+footer {
+  background-color: var(--accent-color); /* Krem Netral */
+  color: var(--text-color);
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-container > div {
+  margin-bottom: 10px;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: var(--primary-color); /* Link cokelat tua */
+}
+
+.footer-info a:hover {
+  background-color: #ede0d4;
+  color: #ca441c;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact ul li a {
+  color: #25d366;
+  text-decoration: none;
+}
+
+.footer-contact ul li a:hover {
+  text-decoration: none;
+  color: #ca441c;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* 💻 Footer Horizontal di Tablet & Laptop */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-container > div {
+    flex: 1;
+    margin-bottom: 0;
+    max-width: 300px;
+  }
+}
+
+/* 📱 Mobile Only */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-slide {
+    display: flex;
+  }
+
+  .produk-card,
+  .foto-galeri {
+    width: 100%;
+  }
+  .deskripsi-produk {
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .deskripsi-produk li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .deskripsi-produk li::before {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  /* Slogan Responsif */
+  .slogan {
+    max-width: 90%;
+    margin: 15px auto;
+  }
+}
+
+/* Tablet & Desktop */
+@media (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-slide {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* ✨ Animasi Masuk */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
